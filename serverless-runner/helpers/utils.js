@@ -3,7 +3,6 @@ const glob = require('glob')
 function convertTestResponseToObject(response) {
     const payload = JSON.parse(JSON.stringify(response.Payload))
     return JSON.parse(JSON.parse(payload).body)
-
 }
 
 function returnMax(array) {
