@@ -1,49 +1,49 @@
-const {Signale} = require('signale')
+const { Signale } = require('signale');
 
 const signale = new Signale({
-    types: {
-        star: {
-                badge: '/',
-          label: 'executed'
-        },
-            success: {
-                label: 'tests passed'
-            },
-            pending: {
-                label: 'tests pending'
-            },
-            error: {
-                label: 'tests failed'
-            },
-            start: {
-                label: 'starting test'
-            }
-      }
+  types: {
+    star: {
+			badge: '/',
+      label: 'executed'
+    },
+		success: {
+			label: 'tests passed'
+		},
+		pending: {
+			label: 'tests pending'
+		},
+		error: {
+			label: 'tests failed'
+		},
+		start: {
+			label: 'starting test'
+		}
+  }
 })
 
 signale.config({
-      displayTimestamp: true,
-      underlineLabel: false
-  })
+  displayTimestamp: true,
+	underlineLabel: false
+})
 
 const durationInSeconds = startTime => {
-    const durationInMilliseconds = Date.now - startTime
-    const durationInSeconds = ((durationInMilliseconds % 60000) / 1000).toFixed(2)
-    return `${durationInSeconds} seconds`
-}  
+	const durationInMilliseconds = Date.now() - startTime
+	const durationInSeconds = ((durationInMilliseconds % 60000) / 1000).toFixed(2)
+	return `${durationInSeconds} seconds`
+}
 
 const millisToMinutesAndSeconds = millis => {
-    let minutes = Math.floor(millis / 60000);
-    let seconds = ((millis % 60000) / 1000).toFixed(0);
-    return (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+  let minutes = Math.floor(millis / 60000);
+  let seconds = ((millis % 60000) / 1000).toFixed(0);
+  return (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
 function logStartTest({ numTotalFiles }) {
-    signale.start(`Test will run on ${numTotalFiles} files\n`)
+	signale.start(`Test will run on ${numTotalFiles} files\n`)
 }
 
 function logFileExecuted({ file, startTestTime, numExecution }) {
-    numExecution = ('00' + numExecution).slice(-3)
+	numExecution = ('00' + numExecution).slice(-3)
 	signale.star({ prefix: `[${numExecution}]`, message: `File "${file}" executed, took ${durationInSeconds(startTestTime)}` });
 }
 
