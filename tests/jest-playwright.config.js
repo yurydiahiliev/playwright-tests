@@ -46,7 +46,7 @@ const lambdaLaunchOptions = {
   module.exports = {
     browsers: ["chromium"],
     launchOptions: {
-      headless: false,
+      headless: true,
       ...(process.env.IS_TEST_RUNNING_ON_LAMBDA === "true" ? lambdaLaunchOptions : null),
     },
   }

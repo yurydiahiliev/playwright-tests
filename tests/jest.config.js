@@ -1,8 +1,8 @@
 module.exports = {
-    name: 'play-e2e',
-    displayName: 'e2e-play',
+    name: 'play-regression',
+    displayName: 'regression-play',
     globals: {
-      BASE_URL: 'https://selenium.dev'
+      BASE_URL: 'https://datatables.net/examples/api/form.html'
     },
     preset: "jest-playwright-preset",
     globalSetup: 'jest-playwright-preset/setup',
