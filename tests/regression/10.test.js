@@ -5,7 +5,7 @@ describe('Data Table Tests', () => {
     await page.goto(BASE_URL)
   })
 
-  it('Should be fill all form in max 100 items', async () => {
+  it('1 Should be fill all form in max 100 items', async () => {
     function randomAge() {
       return Math.floor(Math.random() * 100 + 1).toString()
     }
@@ -37,5 +37,302 @@ describe('Data Table Tests', () => {
         expect(await position.inputValue()).toBe(person.position);
         expect(await office.inputValue()).toBe(person.office);
     }
-  })
+  });
+  it('2 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('3 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('4 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('5 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('6 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('7 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('8 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('9 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
+  it('10 Should be fill all form in max 100 items', async () => {
+    function randomAge() {
+      return Math.floor(Math.random() * 100 + 1).toString()
+    }
+
+    function randomPosition() {
+      return (Math.random() + 1).toString(36).substring(7)
+    }
+
+    await page.selectOption("[name='example_length']", '100')
+
+    const rows = await page.locator('#example tbody tr').all()
+
+    for (const [i, row] of rows.entries()) {
+        const person = {
+          age: randomAge(),
+          position : randomPosition(),
+          office : 'London'
+        }
+
+        const age = row.locator("[id *= 'age']")
+        const position = row.locator("[id *= 'position']")
+        const office = row.locator("[id *= 'office']")
+
+        await age.fill(person.age)
+        await position.fill(person.position)
+        await office.selectOption(person.office)
+
+        expect(await age.inputValue()).toBe(person.age);
+        expect(await position.inputValue()).toBe(person.position);
+        expect(await office.inputValue()).toBe(person.office);
+    }
+  });
 })
